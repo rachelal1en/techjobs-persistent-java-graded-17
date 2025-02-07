@@ -21,9 +21,7 @@ public class EmployerController {
 
     @GetMapping("/")
     public String index(Model model){
-        model.addAttribute("title", "All Employers");
-        List<Employer> employers = (List<Employer>) employerRepository.findAll();
-        model.addAttribute("employers", employers);
+        model.addAttribute("employers", employerRepository.findAll());
         return "employers/index";
     }
 
@@ -39,16 +37,17 @@ public class EmployerController {
 
         if (errors.hasErrors()) {
             return "employers/add";
+        } else {
+            employerRepository.save(newEmployer);
+            return "redirect:";
         }
-
-        employerRepository.save(newEmployer);
-        return "redirect:";
     }
 
     @GetMapping("view/{employerId}")
     public String displayViewEmployer(Model model, @PathVariable int employerId) {
 
-        Optional optEmployer = employerRepository.findAllById(employerId);
+        Optional<Employer> optEmployer = employerRepository.findById(employerId);
+
         if (optEmployer.isPresent()) {
             Employer employer = (Employer) optEmployer.get();
             model.addAttribute("employer", employer);
