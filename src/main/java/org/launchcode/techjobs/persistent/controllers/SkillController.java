@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+//TODO Part 2 Task 9? - Create new controller mirroring Employer but for skill
 @Controller
 @RequestMapping("skills")
 public class SkillController {

@@ -3,21 +3,22 @@ package org.launchcode.techjobs.persistent.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity //mapped to a table & persistent
 public class Employer extends AbstractEntity {
 
+    //TODO Task 2 Part 2 - Add location field with validation and public accessor methods plus entity designation
     @NotBlank(message = "Required field.")
     @Size(min = 0, max = 100, message="Must be within 0 and 100 characters in length.")
     public String location;
 
-    @OneToMany
+    //TODO Task 3 Part 1 - add jobs empty array list
+    @OneToMany //one employer to many jobs
     @JoinColumn(name = "employer_id")
     private List<Job> jobs = new ArrayList<>();
 
@@ -25,8 +26,9 @@ public class Employer extends AbstractEntity {
     public Employer(String location) {
         this.location = location;
     }
-
-    public Employer() {}
+    //required default constructor
+    public Employer() {
+    }
 
     public String getLocation() {
         return location;

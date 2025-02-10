@@ -5,19 +5,19 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.util.Objects;
 
-@MappedSuperclass
+//TODO Task 2 Part 1 - label parent and add annotations to ID and name
+@MappedSuperclass //provides mapping info for subclasses
 public abstract class AbstractEntity {
 
-    @Id
+    @Id //primary key
     @GeneratedValue
     private int id;
 
-    @NotBlank(message = "Required field.")
+    @NotBlank(message = "Required field.") //Not null or empty
     @Size(min = 0, max = 100, message="Must be within 0 and 100 characters in length.")
     private String name;
 

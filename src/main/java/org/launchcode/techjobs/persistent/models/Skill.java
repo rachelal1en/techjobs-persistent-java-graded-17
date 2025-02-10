@@ -2,7 +2,6 @@ package org.launchcode.techjobs.persistent.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToMany;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 import java.util.ArrayList;
@@ -11,9 +10,11 @@ import java.util.List;
 @Entity
 public class Skill extends AbstractEntity {
 
+    //TODO Task 2 Part 3 - add a field for description, define as entity, no-arg constructor, getter/setter
     @Size(min = 0, max = 100, message="Must be within 0 and 100 characters in length.")
     public String description;
 
+    //TODO Task 4 Part 1 - add jobs with getter/setter, annotation
     @ManyToMany(mappedBy = "skills")
     private List<Job> jobs = new ArrayList<>();
 
