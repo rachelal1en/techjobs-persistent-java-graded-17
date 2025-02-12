@@ -23,7 +23,7 @@ import java.util.Optional;
 @Controller
 public class HomeController {
 
-    //TODO Task 3 Part 4? - add employer respiratory field
+    //TODO Task 3 Part 4 - add employer respiratory field
     @Autowired
     private EmployerRepository employerRepository;
 
@@ -52,7 +52,7 @@ public class HomeController {
         return "add";
     }
 
-    //TODO Task 3 Part 5? - Add code to select the employer associated with the new job
+    //TODO Task 3 Part 5 - Add code to select the employer associated with the new job
     //process form to add jobs, and validates
     @PostMapping("add")
     public String processAddJobForm(@ModelAttribute @Valid Job newJob,

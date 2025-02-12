@@ -15,11 +15,11 @@ import java.util.Optional;
 @RequestMapping("employers")
 public class EmployerController {
 
-    //TODO Task 2 Part 5? - Add a private field to utilize EmployerRepository
+    //TODO Task 2 Part 6 - Add a private field to utilize EmployerRepository
     @Autowired
     private EmployerRepository employerRepository;
 
-    //TODO Task 2 Part 6? - Add a method that responds with a list of all of the employers
+    //TODO Task 2 Part 7 - Add a method that responds with a list of all of the employers
     @GetMapping("/")
     public String index(Model model){
         model.addAttribute("employers", employerRepository.findAll());
@@ -32,7 +32,7 @@ public class EmployerController {
         model.addAttribute(new Employer());
         return "employers/add";
     }
-    //TODO Task 2 Part 7? - Add method using repository to save valid object
+    //TODO Task 2 Part 8 - Add method using repository to save valid object
     @PostMapping("add")
     public String processAddEmployerForm(@ModelAttribute @Valid Employer newEmployer,
                                     Errors errors, Model model) {
@@ -45,7 +45,7 @@ public class EmployerController {
         }
     }
 
-    //TODO Task 2 Part 8? - add method to render view of individual employer object
+    //TODO Task 2 Part 9 - add method to render view of individual employer object
     @GetMapping("view/{employerId}")
     public String displayViewEmployer(Model model, @PathVariable int employerId) {
 

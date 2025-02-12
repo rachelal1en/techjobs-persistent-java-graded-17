@@ -24,7 +24,7 @@ public class ListController {
     @Autowired
     private JobRepository jobRepository;
 
-    //TODO Task 4 Part 4? - add fields for employer and skill repositories
+    //TODO Task 4 Part 4 - add fields for employer and skill repositories
     @Autowired
     private EmployerRepository employerRepository;
 
@@ -41,7 +41,7 @@ public class ListController {
 
     }
 
-    //TODO Task 4 Part 5? - add employer and skill parts to view template
+    //TODO Task 4 Part 5 - add employer and skill parts to view template
     @RequestMapping("")
     public String list(Model model) {
         model.addAttribute("employers", employerRepository.findAll());
