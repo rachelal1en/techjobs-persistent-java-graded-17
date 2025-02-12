@@ -25,7 +25,8 @@ The starter code contains 6 unit test classes.
 `TestTaskTwo` has over 25 tests and covers all of Part 2.  If this class of tests fails, students need to carefully explore the test results for where an error occured.  
 
 This test class verifies the following:
-   * `AbstractEntity` - Does it exisit? How does it handle names and IDs?
+   * `AbstractEntity` - Does it exisit? How does it handle names and IDs? 
+--it requires names and IDs and passes them done to classes that extend AbstractEntity
    * Model Tests such as `Employer` and `Skill` - Do they contain the correct fields, correct accessors, correct validation annotations, constructors, and persistence.
    * The Data Layer - Do `EmployerRepository` and `SkillRepository` exisit?  Do theese repos implement CrudRepository? 
    * Controller Tests - Do EmployerController.index and SkillController.index route properly? Does it properly handle data inputs, routing, `findAll()` and `findById()` methods, and storing data?
